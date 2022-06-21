@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "container",
+      "microfront-a"
+    ]
+  },
+  "scripts": {
+    "start": "concurrently 'cd ./root-config && yarn start' 'cd ./app-hermes && yarn start'",
+    "build": "concurrently 'cd ./root-config && yarn build' 'cd ./app-hermes && yarn build'",
+    "serve": "concurrently 'cd ./root-config && yarn serve' 'cd ./app-hermes && yarn serve'",
+    "clean": "concurrently 'cd ./root-config && yarn clean' 'cd ./app-hermes && yarn clean'"
+  },
+  "devDependencies": {
+    "concurrently": "7.2.1"
+  },
+  "dependencies": {
+    "@types/react-helmet": "^6.1.5"
+  }
+}
